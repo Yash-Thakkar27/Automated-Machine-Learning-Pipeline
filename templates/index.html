@@ -11,15 +11,358 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-            height: 100vh;
+            background: #ffffff;
+            min-height: 100vh;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            background: white;
+            padding: 12px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #1e40af;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .nav-logo svg {
+            width: 32px;
+            height: 32px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #475569;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #3b82f6;
+        }
+
+        /* Landing Page Styles */
+        .landing-page {
+            background: white;
+            min-height: 85vh;
+            padding: 70px 20px 40px;
+            position: relative;
+        }
+
+        .blue-header {
+            background: white;
+            padding: 40px 20px 40px;
+        }
+
+        .hero-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 40px;
+            align-items: center;
+            position: relative;
+        }
+
+        .hero-illustration {
+            text-align: center;
+            animation: fadeInLeft 1s ease;
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .illustration-placeholder {
+            background: transparent;
+            border-radius: 20px;
+            padding: 20px;
+        }
+
+        .hero-illustration img {
+            width: 100%;
+            height: auto;
+            max-width: 450px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .hero-content {
+            animation: fadeInRight 1s ease;
+        }
+
+        .landing-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #1e40af;
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+
+        .landing-subtitle {
+            font-size: 1.1rem;
+            color: #475569;
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+
+        .landing-description {
+            font-size: 0.95rem;
+            color: #64748b;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .feature-checks {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+
+        .feature-checks li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 10px;
+            color: #334155;
+            font-size: 0.95rem;
+        }
+
+        .check-icon {
+            width: 24px;
+            height: 24px;
+            background: #3b82f6;
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 20px;
-            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 14px 40px;
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+            border: none;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+        }
+
+        /* Key Features Section */
+        .features-section {
+            padding: 50px 20px 40px;
+            background: white;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #2563eb;
+            margin-bottom: 10px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1rem;
+            color: #64748b;
+            margin-bottom: 40px;
+        }
+
+        .features-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+            border: 1px solid #e2e8f0;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(37, 99, 235, 0.15);
+            border-color: #cbd5e1;
+        }
+
+        .feature-card-icon {
+            width: 50px;
+            height: 50px;
+            background: #eff6ff;
+            border-radius: 12px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            color: #2563eb;
+        }
+
+        .feature-card h3 {
+            font-size: 1.1rem;
+            color: #1e293b;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .feature-card p {
+            font-size: 0.9rem;
+            color: #64748b;
+            line-height: 1.5;
+        }
+
+        /* How It Works Section */
+        .how-it-works-section {
+            padding: 50px 20px 40px;
+            background: white;
+        }
+
+        .workflow-grid {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .workflow-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px 25px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+            border: 1px solid #e2e8f0;
+        }
+
+        .workflow-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(37, 99, 235, 0.12);
+        }
+
+        .workflow-number {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+            color: white;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .workflow-card h4 {
+            font-size: 1.1rem;
+            color: #1e293b;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .workflow-card p {
+            font-size: 0.9rem;
+            color: #64748b;
+        }
+
+        /* Final CTA Section */
+        .final-cta-section {
+            padding: 50px 20px 40px;
+            background: white;
+            text-align: center;
+        }
+
+        .final-cta-section h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 15px;
+        }
+
+        .final-cta-section p {
+            font-size: 1rem;
+            color: #64748b;
+            margin-bottom: 30px;
+        }
+
+        /* Form Section Styles */
+        .form-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
         }
 
         .container {
@@ -30,7 +373,6 @@
             padding: 40px;
             width: 100%;
             max-width: 500px;
-            max-height: 90vh;
         }
 
         .header {
@@ -143,6 +485,7 @@
             cursor: pointer;
             transition: all 0.2s ease;
             margin-top: 8px;
+            box-sizing: border-box;
         }
 
         .submit-btn:hover {
@@ -220,7 +563,32 @@
             100% { transform: rotate(360deg); }
         }
 
-        @media (max-width: 640px) {
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-section {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .landing-title {
+                font-size: 2rem;
+            }
+
+            .landing-subtitle {
+                font-size: 1rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .workflow-grid {
+                grid-template-columns: 1fr;
+            }
+
             .container {
                 padding: 24px;
                 margin: 10px;
@@ -233,6 +601,162 @@
     </style>
 </head>
 <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                </svg>
+                <span>Automated ML Pipeline</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#get-started">Get Started</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Landing Page Section -->
+    <div class="landing-page" id="home">
+        <div class="blue-header">
+        <div class="hero-section">
+            <div class="hero-illustration">
+                <img src="hero-image.svg" alt="ML Dashboard Illustration">
+            </div>
+
+            <div class="hero-content">
+                <h1 class="landing-title">Automated ML Pipeline</h1>
+                <p class="landing-subtitle">Transform Your Data into Predictive Intelligence</p>
+                <p class="landing-description">
+                    Harness the power of AutoML to automate your machine learning workflow without writing a single line of code.
+                </p>
+                <p class="landing-description">
+                    Upload your data, select your task, and let our AI handle the rest.
+                </p>
+
+                <ul class="feature-checks">
+                    <li>
+                        <span class="check-icon">
+                            <svg width="16" height="16" fill="white" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                        </span>
+                        Automatic Data Preprocessing
+                    </li>
+                    <li>
+                        <span class="check-icon">
+                            <svg width="16" height="16" fill="white" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                        </span>
+                        Train Multiple Models in Parallel
+                    </li>
+                    <li>
+                        <span class="check-icon">
+                            <svg width="16" height="16" fill="white" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                        </span>
+                        Best Model Selection & Detailed Reports
+                    </li>
+                </ul>
+
+                <button class="cta-button" onclick="document.querySelector('.form-section').scrollIntoView({behavior: 'smooth'})">
+                    Get Started Now →
+                </button>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <!-- Key Features Section -->
+    <div class="features-section" id="features">
+        <h2 class="section-title">Key Features</h2>
+        <p class="section-subtitle">Everything You Need for Automated Machine Learning</p>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-card-icon">
+                    <svg width="28" height="28" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M11 3a1 1 0 10-2 0v1a1 1 0 102 0V3zM15.657 5.757a1 1 0 00-1.414-1.414l-.707.707a1 1 0 001.414 1.414l.707-.707zM18 10a1 1 0 01-1 1h-1a1 1 0 110-2h1a1 1 0 011 1zM5.05 6.464A1 1 0 106.464 5.05l-.707-.707a1 1 0 00-1.414 1.414l.707.707zM5 10a1 1 0 01-1 1H3a1 1 0 110-2h1a1 1 0 011 1zM8 16v-1h4v1a2 2 0 11-4 0zM12 14c.015-.34.208-.646.477-.859a4 4 0 10-4.954 0c.27.213.462.519.476.859h4.002z"/>
+                    </svg>
+                </div>
+                <h3>Lightning Fast</h3>
+                <p>Train 10+ models simultaneously for rapid results</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-card-icon">
+                    <svg width="28" height="28" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                </div>
+                <h3>Auto Preprocessing</h3>
+                <p>Automated cleaning, normalization, and feature engineering</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-card-icon">
+                    <svg width="28" height="28" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"/>
+                    </svg>
+                </div>
+                <h3>Best Model Selection</h3>
+                <p>Automatically chooses the top-performing algorithm</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-card-icon">
+                    <svg width="28" height="28" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 0l-2 2a1 1 0 101.414 1.414L8 10.414l1.293 1.293a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                </div>
+                <h3>Detailed Reports</h3>
+                <p>Comprehensive performance metrics and visualizations</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- How It Works Section -->
+    <div class="how-it-works-section" id="how-it-works">
+        <h2 class="section-title">How It Works</h2>
+        <p class="section-subtitle">Simple Steps to Get Predictive Insights</p>
+
+        <div class="workflow-grid">
+            <div class="workflow-card">
+                <div class="workflow-number">1</div>
+                <h4>Upload Your Data</h4>
+                <p>Easily upload your dataset</p>
+            </div>
+
+            <div class="workflow-card">
+                <div class="workflow-number">2</div>
+                <h4>AI Model Training</h4>
+                <p>Our system trains multiple models in parallel</p>
+            </div>
+
+            <div class="workflow-card">
+                <div class="workflow-number">3</div>
+                <h4>Get Results</h4>
+                <p>Receive the best model and detailed reports</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Final CTA Section -->
+    <div class="final-cta-section" id="get-started">
+        <h2>Start Your AI Journey Today!</h2>
+        <p>Transform your data into actionable insights in minutes.</p>
+        <button class="cta-button" onclick="document.querySelector('.form-section').scrollIntoView({behavior: 'smooth'})">
+            Get Started Now →
+        </button>
+    </div>
+
+    <!-- Form Section -->
+    <div class="form-section">
     <div class="container">
         <div class="header">
             <h1>ML Pipeline</h1>
@@ -349,5 +873,7 @@
             submitText.textContent = 'Processing...';
         });
     </script>
+    </div>
+    </div>
 </body>
 </html>
