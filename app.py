@@ -440,4 +440,8 @@ def predict():
 
 if __name__ == '__main__':
     display_info.append("Starting Flask application")
+<<<<<<< HEAD
     app.run(debug=True)
+=======
+    app.run(debug=True)
+>>>>>>> 80bba1ccf775544104380b680f84065da1bd4eb2
